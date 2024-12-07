@@ -53,8 +53,8 @@ st.write("The Titanic was an infamous disaster in 1912 that resulted in the loss
 titanic_columns = ['Passenger Class', 'Gender', 'Age Group', 'Siblings/Spouses Aboard', 'Parents/Children Aboard', 'Fare Range', 'Port of Embarkation']
 
 # Setting up the variables for axis selection
-x_field = st.selectbox("Select X Axis:", titanic_columns, index=0)
-y_field = st.selectbox("Select Y Axis:", titanic_columns, index=1)
+x_field = st.selectbox("Select your first comparison category (X):", titanic_columns, index=0)
+y_field = st.selectbox("Select your second comparison category (Y):", titanic_columns, index=1)
 
 # Make sure that the selected x and y axis are different; user should get a warning if they are the same
 if x_field == y_field:
