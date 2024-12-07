@@ -47,7 +47,7 @@ df['Fare Range'] = pd.Categorical(df['Fare Range'], categories=fare_labels, orde
 
 # Title and description for the app
 st.title("Exploratory Titanic Survival Rate Heatmap")
-st.write("Compare survival rates across different categories. Ages and fares have been grouped together.")
+st.write("The Titanic was an infamous disaster in 1912 that resulted in the loss of many lives. I built this visualization so that you could compare the different survival rates across a range of data fields that exist on the passengers. Passenger ages and fares paid have been grouped together.")
 
 # Dropdowns for user to select fields
 titanic_columns = ['Passenger Class', 'Gender', 'Age Group', 'Siblings/Spouses Aboard', 'Parents/Children Aboard', 'Fare Range', 'Port of Embarkation']
