@@ -30,7 +30,7 @@ df['Port of Embarkation'].replace({
 df['Gender'].replace({'male': 'Male', 'female': 'Female'}, inplace=True)
 
 # Replacing passenger class with more readable names
-df['Gender'].replace({'1': '1st', '2': '2nd', '3': '3rd'}, inplace=True)
+df['Passenger Class'].replace({'1': '1st', '2': '2nd', '3': '3rd'}, inplace=True)
 
 # Grouping age into life stage buckets
 age_bins = [0, 12, 19, 45, 65, 130]
