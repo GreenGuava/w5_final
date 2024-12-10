@@ -29,9 +29,12 @@ df['Port of Embarkation'].replace({
 # Capitalizing gender values for a more consistent experience, everything else is capitalized
 df['Gender'].replace({'male': 'Male', 'female': 'Female'}, inplace=True)
 
+# Replacing passenger class with more readable names
+df['Gender'].replace({'1': '1st', '2': '2nd', '3': '3rd'}, inplace=True)
+
 # Grouping age into life stage buckets
 age_bins = [0, 12, 19, 45, 65, 130]
-age_labels = ['Child', 'Teenage', 'Adult', 'Middle-Aged', 'Senior']
+age_labels = ['Child (0-12)', 'Teenager (13-19)', 'Adult (20-45)', 'Middle-Aged (46-65)', 'Senior (65+)'] # Modified to show age-range being shown
 df['Age Group'] = pd.cut(df['Age'], bins=age_bins, labels=age_labels, include_lowest=True)
 
 # Making sure the age groups show correctly when ordered in Streamlit
@@ -82,7 +85,8 @@ else:
             color=alt.Color(
                 'Survival Rate (%):Q',
                 title='Survival Rate (%)',
-                scale=alt.Scale(scheme='inferno')  # Nice color scheme, stands out well
+                scale=alt.Scale(scheme='teals')  # Changed to teals based off of feedback
+                
             ),
             # Tooltip to show more detailed values on hover
             tooltip=[
