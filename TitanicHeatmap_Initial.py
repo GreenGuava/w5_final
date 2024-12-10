@@ -30,6 +30,8 @@ df['Port of Embarkation'].replace({
 df['Gender'].replace({'male': 'Male', 'female': 'Female'}, inplace=True)
 
 # Replacing passenger class with more readable names
+# I need to convert the column to a string type first
+df['Passenger Class'] = df['Passenger Class'].astype(str)
 df['Passenger Class'].replace({'1': '1st', '2': '2nd', '3': '3rd'}, inplace=True)
 
 # Grouping age into life stage buckets
